@@ -1,12 +1,14 @@
 package com.coreywoodfield.pokedex.model;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Created by cwoodfie on 3/24/16.
  */
 public class Species {
-	private String name;
+	@Expose private String name;
 	private String url;
-	private SpeciesInfo speciesInfo;
+	@Expose private SpeciesInfo speciesInfo;
 
 	public String getName() {
 		return name;
@@ -25,8 +27,8 @@ public class Species {
 	}
 
 	public static class SpeciesInfo {
-		private FlavorTextEntries[] flavorTextEntries;
-		private Variety[] varieties;
+		@Expose private FlavorTextEntries[] flavorTextEntries;
+		@Expose private Variety[] varieties;
 
 		public String getFlavorText() {
 			for (FlavorTextEntries entry : flavorTextEntries) {

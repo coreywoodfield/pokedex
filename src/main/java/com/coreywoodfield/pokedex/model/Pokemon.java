@@ -1,6 +1,7 @@
 package com.coreywoodfield.pokedex.model;
 
 import com.google.common.collect.Lists;
+import com.google.gson.annotations.Expose;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,13 +11,13 @@ import java.util.List;
  * Created by cwoodfie on 3/18/16.
  */
 public class Pokemon {
-	private Integer id;
-	private String name;
-	private Type[] types;
-	private Double height;
-	private Double weight;
-	private Sprites sprites;
-	private Species species;
+	@Expose private Integer id;
+	@Expose private String name;
+	@Expose private Type[] types;
+	@Expose private Double height;
+	@Expose private Double weight;
+	@Expose private Sprites sprites;
+	@Expose private Species species;
 	private List<Pokemon> altForms;
 
 	public Integer getId() {
@@ -95,8 +96,8 @@ public class Pokemon {
 	}
 
 	public static class Sprites {
-		private String frontShiny;
-		private String frontDefault;
+		@Expose private String frontShiny;
+		@Expose private String frontDefault;
 
 		public String getSprite() {
 			return frontDefault;

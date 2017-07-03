@@ -16,17 +16,7 @@ import java.util.List;
  * Created by coreywoodfield on 7/3/17.
  */
 public class JsonHelper {
-	private static final Gson GSON = new GsonBuilder().setExclusionStrategies(new ExclusionStrategy() {
-		@Override
-		public boolean shouldSkipField(FieldAttributes fieldAttributes) {
-			return fieldAttributes.getName().equals("url") || fieldAttributes.getName().equals("altForms");
-		}
-
-		@Override
-		public boolean shouldSkipClass(Class<?> aClass) {
-			return false;
-		}
-	})
+	private static final Gson GSON = new GsonBuilder().excludeFieldsWithoutExposeAnnotation()
 													  .registerTypeAdapter(Pokemons.PokemonRef.class, new PokemonRefSerializer())
 													  .registerTypeAdapter(Species.SpeciesInfo.FlavorTextEntries[].class, new FlavorTextSerializer())
 													  .registerTypeAdapter(Species.SpeciesInfo.Variety[].class, new VarietyArraySerializer())

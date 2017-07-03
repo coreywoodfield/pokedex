@@ -1,12 +1,14 @@
 package com.coreywoodfield.pokedex.model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.List;
 
 /**
  * Created by coreywoodfield on 7/3/17.
  */
 public class Pokemons {
-	private List<PokemonRef> results;
+	@Expose	private List<PokemonRef> results;
 
 	public List<PokemonRef> getResults() {
 		return results;
